@@ -1,0 +1,14 @@
+{
+  "name": "genie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WuHan",
+  "license": "ISC",
+  "dependencies": {
+    "layui": "^2.9.8"
+  }
+}

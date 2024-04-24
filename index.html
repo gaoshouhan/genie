@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="node_modules/layui/dist/css/layui.css" />
+    <script src="node_modules/layui/dist/layui.js"></script>
+  </head>
+
+  <body>
+
+    <div class="layui-form">
+      <input type="text" name="" placeholder="文本框" class="layui-input">
+      <hr class="ws-space-16">
+      <textarea name="" placeholder="多行文本框" class="layui-textarea"></textarea>
+    </div>
+
+
+    <div id="container"></div>
+
+    <button id="startButton">开始</button>
+    <button id="submitButton" style="display: none">提交</button>
+
+    <form id="myForm" style="display: none">
+      Selected Options: <span id="selectedOptions"></span>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
