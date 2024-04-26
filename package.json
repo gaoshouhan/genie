@@ -9,6 +9,7 @@
   "author": "WuHan",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "layui": "^2.9.8"
   }
 }
