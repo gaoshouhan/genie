@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #sidebar {
+      width: 0;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0; /* 将位置改为右侧 */
+      background-color: #333;
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    #content {
+      margin-right: 0; /* 将位置改为右侧 */
+      transition: margin-right 0.5s;
+    }
+
+    #sidebarToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px; /* 将位置改为右侧 */
+      z-index: 999;
+    }
+  </style>
+  <title>Sidebar Animation</title>
+</head>
+<body>
+  
+  <div id="content">
+    <!-- Main content of your website here -->
+    <h1>Main Content</h1>
+    <p>This is the main content of your website.</p>
+  </div>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    sidebarToggle.addEventListener('click', () => {
+      if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+        content.style.marginRight = '0'; /* 将位置改为右侧 */
+      } else {
+        sidebar.style.width = '250px';
+        content.style.marginRight = '250px'; /* 将位置改为右侧 */
+      }
+    });
+  </script>
+</body>
+</html>
