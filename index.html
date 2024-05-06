@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>demo</title>
+
   //样式表
   <link rel="stylesheet" href="node_modules/layui/dist/css/layui.css" />
   <link rel="stylesheet" href="css/index.css" />
@@ -19,27 +20,15 @@
 </head>
 
 <body>
-  <div class="layui-layout layui-layout-admin">
-   
 
-    <div class="layui-body">
-      <!-- 内容主体区域 -->
-          <div id="container"></div>
-          <div class="loader" id="loader"></div>
-          <form id="myForm" style="display: none">
-            Selected Options: <span id="selectedOptions"></span>
-            <input type="submit" value="Submit" />
-          </form>
-          <button id="sidebarToggle">Toggle Sidebar</button>
-          <div id="sidebar">
-            <!-- Add content for your sidebar here -->
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-            </ul>
-          </div>
-    </div>
+  <button id="sidebarToggle">Toggle Sidebar</button>
+  <div id="sidebar">
+    <div id="container"></div>
+    <div class="loader" id="loader"></div>
+    <form id="myForm" style="display: none">
+      Selected Options: <span id="selectedOptions"></span>
+      <input type="submit" value="Submit" />
+    </form>
     <div class="layui-footer" style="height: 4rem; display: flex">
       <div class="s1-box">
         <div class="layui-form" style="width: 80%">
@@ -52,6 +41,8 @@
     </div>
   </div>
 
+  
+
   <script>
     const sidebar = document.getElementById('sidebar');
 
@@ -60,7 +51,7 @@
     sidebarToggle.addEventListener('click', () => {
       if (sidebar.style.width === '550px') {
         sidebar.style.width = '0';
-     
+
       } else {
         sidebar.style.width = '550px';
       }
