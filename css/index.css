@@ -55,6 +55,7 @@ html {
     border-radius: 5px;
     font-size: 16px;
     opacity: 0;
+    overflow: hidden;
     transition: all 0.5s ease;
     /* 过渡效果 */
     cursor: pointer;
@@ -97,22 +98,60 @@ html {
 
 /* 侧边栏 */
 #sidebar {
+    display: flex;
+    flex-direction: column;
     width: 0;
     height: 100%;
     position: fixed;
     top: 0;
     right: 0;
     /* 将位置改为右侧 */
-    background-color:#e8e8e8 ;
+    background-color: #e8e8e8;
     overflow-x: hidden;
     transition: 0.5s;
+    z-index: 666;
 }
 
+.siderbar-main {
+    width: 100%;
+    height: auto;
+    background-color: pink;
+}
 
 #sidebarToggle {
     position: absolute;
     top: 100px;
-    right: 220px;
+    left: 0;
     /* 将位置改为右侧 */
     z-index: 9;
+}
+
+#toggleBack {
+
+    width: 4rem;
+    /* 按钮宽度 */
+    background: transparent;
+    /* 透明背景 */
+    background-image: url("../images/sidebar.png");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    /* 移除按钮边框 */
+    cursor: pointer;
+    /* 鼠标样式为手型 */
+    z-index: 1000;
+    /* 确保按钮在侧边栏内容之上 */
+}
+
+.ans{
+    display: none;
+    position:absolute;
+    left: 50%;
+    top: 35%;
+    margin-left: -40%;
+    width: 80%;
+    height: auto;
+    background-color: pink;
+    font-size: 1rem;
 }

@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //侧边栏
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const toggleBack = document.getElementById("toggleBack");
 
+    toggleBack.addEventListener('click', () => {
+        if (sidebar.style.width === '650px') {
+          sidebar.style.width = '0';
+  
+        } else {
+          sidebar.style.width = '650px';
+        }
+      });
+    sidebarToggle.addEventListener('click', () => {
+      if (sidebar.style.width === '650px') {
+        sidebar.style.width = '0';
+
+      } else {
+        sidebar.style.width = '650px';
+      }
+    });
     //主要交互逻辑
 
     var form = document.getElementById("myForm");
@@ -10,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var nextButton = document.getElementById("next-Button");
     var ansButton = document.getElementById("ans-Button");
     var loader = document.getElementById("loader");
+    var ansText = document.getElementById('ans-text');
 
     var selectedOptions = [];
     var selectedBgKey = [];
@@ -18,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let bgKeysList; //背景信息列表
     let preferenceKeysList;//需求列表
     let answer;// 定义一个变量来保存答案
+
 
     // 定义IP地址和端口号变量
     const ipAddress = '127.0.0.1';
@@ -171,7 +193,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 { bg_keys_list_input: selectedBgKey, preference_keys_list_input: selectedPreferKey }
             )
             .then((response) => {
-                console.log('成功进入');
+                console.log('请求答案成功');
+                console.log(response.data);
+
                 // 发送GET请求给后端接口
                 axios
                     .get(`http://${ipAddress}:${port}/knowledgeQuery/ask_kb`)
@@ -179,7 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         // 将返回的答案保存在变量中
                         answer = response.data;
                         console.log(answer);
-                        // 在这里添加ansButton点击后的操作
+                        //显示答案
+                        ansText.innerText = answer;
                     })
                     .catch((error) => {
                         // 处理请求错误
